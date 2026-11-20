@@ -90,7 +90,7 @@ npm run typecheck
 npm run build
 ```
 
-The API suite covers health, the image endpoints, validation failures, the farming guide, rate limiting, and browser-route fallback. Production installs use `requirements.txt`; local test tools are in `requirements-dev.txt`. A live Supabase project is needed to test email delivery, database RLS, and authenticated profile journeys end to end.
+The API suite covers health, the image endpoints, validation failures, the farming guide, rate limiting, and browser-route fallback. Production installs use `requirements.txt`; local test tools are in `requirements-dev.txt`. The hosted schema and RLS policies have been applied and checked. Email delivery and authenticated profile journeys still need end-to-end verification after production SMTP and the final redirect URLs are configured.
 
 ## Vercel deployment
 
