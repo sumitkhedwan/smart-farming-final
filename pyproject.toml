@@ -1,7 +1,7 @@
 [project]
 name = "agriwise"
 version = "1.0.0"
-requires-python = ">=3.10,<3.13"
+requires-python = ">=3.11,<3.13"
 dependencies = [
     "fastapi==0.165.0",
     "uvicorn==0.34.0",
