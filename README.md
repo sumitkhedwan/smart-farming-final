@@ -2,6 +2,8 @@
 
 AgriWise is a React and TypeScript farming tools app with a FastAPI service. It includes plant and soil photo screening, user-owned crop records, farm settings, and a small agronomy reference guide.
 
+Production deployment: [https://smart-farming-final.vercel.app](https://smart-farming-final.vercel.app).
+
 > **Model limitation:** the checked-in image models use synthetic demo data. They are not accurate field diagnostics and must not be used to decide pesticide or fertilizer treatments. Market prices and notification delivery are not connected to providers.
 
 ## Features
@@ -53,11 +55,11 @@ Open `http://localhost:8080`. Vite proxies `/api` requests to FastAPI on port 50
 
 1. Create a Supabase project and configure its Auth email provider. For real users, set up a production SMTP provider and enable email confirmation.
 2. Apply `supabase/migrations/20261120000000_user_profiles_and_farm_data.sql` with the Supabase CLI (`npx supabase login`, `npx supabase link --project-ref <project-ref>`, then `npx supabase db push`) or the SQL editor.
-3. In Supabase Auth URL configuration, set the Site URL to the app URL and allow these redirects:
+3. In Supabase Auth URL configuration, set the Site URL to `https://smart-farming-final.vercel.app` and allow these redirects:
    - `http://localhost:8080/auth/callback`
    - `http://localhost:8080/reset-password`
-   - `https://<production-domain>/auth/callback`
-   - `https://<production-domain>/reset-password`
+   - `https://smart-farming-final.vercel.app/auth/callback`
+   - `https://smart-farming-final.vercel.app/reset-password`
 4. Set the minimum password length to 12 and enable breached-password protection if available for the project plan.
 5. Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in `.env`. Never put a service-role key in a `VITE_` variable or commit it.
 
@@ -107,7 +109,7 @@ VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key
 ```
 
-Vercel Functions have a 4.5 MB request body limit, so the app uses a 4 MiB image limit there. Add the final Vercel domain to Supabase Auth's Site URL and redirect allowlist after the first deployment. Static routes, image API routes, email confirmation, and password reset should be verified on the deployed domain.
+Vercel Functions have a 4.5 MB request body limit, so the app uses a 4 MiB image limit there. The production URL is `https://smart-farming-final.vercel.app`; set it as Supabase Auth's Site URL and allow the confirmation and password-reset paths listed above. Link the GitHub repository in Vercel Project Settings to enable automatic deployments on pushes. Static route fallback and the API health endpoint are verified on the deployed domain; email confirmation and password reset still require production SMTP and Auth URL configuration.
 
 The built-in rate limiter uses process memory and is best-effort on a serverless platform. Supabase Auth applies its own protection to sensitive Auth operations. For high-traffic production use, enforce API request limits at the platform edge or with a shared rate-limit store.
 
