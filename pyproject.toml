@@ -15,5 +15,5 @@ dependencies = [
 app = "index:app"
 
 [tool.vercel.scripts]
-build = "npm ci && npm run build"
+build = "npm ci && npm run build && node scripts/copy-dist-to-public.mjs"
 
