@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest==9.0.3
+httpx2==2.11.0; python_version < "3.11"
+httpx2==2.16.2; python_version >= "3.11"

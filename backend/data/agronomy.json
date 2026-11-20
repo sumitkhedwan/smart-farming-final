@@ -1,0 +1,69 @@
+{
+  "diseases": {
+    "healthy": {
+      "risk": "low",
+      "symptoms": [],
+      "organic": ["No treatment is indicated by this result; continue normal crop care."],
+      "chemical": [],
+      "dosage": "No pesticide is recommended for a healthy result.",
+      "prevention": ["Scout plants weekly and use clean tools and healthy planting material."]
+    },
+    "apple_scab": {
+      "risk": "medium",
+      "symptoms": ["Olive or dark lesions can appear on leaves and fruit; this image model does not confirm symptoms."],
+      "organic": ["Remove fallen infected leaves and dispose of them away from the orchard.", "Prune for airflow and avoid wetting foliage when watering."],
+      "chemical": ["A locally registered fungicide labeled for apple scab may be considered after confirmation."],
+      "dosage": "Use only the exact label dose and interval for the crop and product; there is no universal rate.",
+      "prevention": ["Plant locally recommended resistant cultivars, remove leaf litter, and follow local disease forecasts."]
+    },
+    "cedar_apple_rust": {
+      "risk": "medium",
+      "symptoms": ["Orange leaf spots may occur; confirm the host and nearby alternate hosts before treatment."],
+      "organic": ["Remove heavily affected fallen leaves and improve canopy airflow."],
+      "chemical": ["Use a locally registered rust fungicide only when a qualified adviser confirms it is warranted."],
+      "dosage": "Follow the product label for apple, growth stage, pre-harvest interval, and local registration.",
+      "prevention": ["Choose resistant cultivars where available and use local guidance for alternate-host management."]
+    },
+    "black_rot": {
+      "risk": "high",
+      "symptoms": ["Dark fruit lesions or branch cankers may be consistent with black rot but need field confirmation."],
+      "organic": ["Prune cankered wood in dry weather and remove mummified fruit and infected debris."],
+      "chemical": ["A locally registered fungicide may be used only as part of an integrated, confirmed disease plan."],
+      "dosage": "Use the exact product label rate and observe protective equipment and pre-harvest restrictions.",
+      "prevention": ["Sanitize pruning tools, remove infected debris, and avoid wounding branches where practical."]
+    },
+    "early_blight": {
+      "risk": "medium",
+      "symptoms": ["Target-like leaf spots can be associated with early blight; inspect the crop and lower leaves."],
+      "organic": ["Remove badly affected leaves, mulch to reduce soil splash, and water at the base."],
+      "chemical": ["If confirmed, consult local extension guidance for a registered product and resistance rotation."],
+      "dosage": "Use the exact label rate for the named crop and product; observe the re-entry and harvest intervals.",
+      "prevention": ["Rotate crops, remove volunteer hosts, maintain spacing, and avoid prolonged leaf wetness."]
+    },
+    "late_blight": {
+      "risk": "high",
+      "symptoms": ["Rapidly expanding dark lesions can be serious; this image result is not a confirmation."],
+      "organic": ["Isolate suspect plants where possible and remove diseased material without composting it."],
+      "chemical": ["Contact local agricultural extension promptly; only use locally registered products after confirmation."],
+      "dosage": "Follow the exact local product label. Do not apply a product based only on an image prediction.",
+      "prevention": ["Use clean seed or transplants, destroy volunteers, and monitor local disease alerts."]
+    },
+    "unknown": {
+      "risk": "unknown",
+      "symptoms": ["The model could not confidently identify a supported disease."],
+      "organic": ["Do not apply pesticide from this result. Take a clear close-up of the affected leaf and consult a local extension service."],
+      "chemical": ["No chemical treatment is recommended for an unknown result."],
+      "dosage": "Not applicable until a disease is confirmed by a qualified person.",
+      "prevention": ["Keep tools clean, avoid moving wet foliage between plants, and monitor for spread."]
+    }
+  },
+  "soils": {
+    "sandy": {"crops": ["groundnut", "millet", "watermelon"], "irrigation": "Use smaller, more frequent irrigations; add organic matter to improve water holding.", "fertilizer": "Use a soil-test-based split nutrient plan; compost can improve water and nutrient retention.", "tests_to_confirm": ["Soil texture by field inspection", "pH and available nutrients through a laboratory soil test"]},
+    "clay": {"crops": ["rice where drainage and water supply suit", "wheat", "cotton"], "irrigation": "Irrigate slowly and less frequently; prevent ponding and avoid field traffic when wet.", "fertilizer": "Base amendments on soil testing; add mature organic matter and avoid working saturated soil.", "tests_to_confirm": ["Drainage and texture assessment", "pH and available nutrients through a laboratory soil test"]},
+    "loamy": {"crops": ["maize", "wheat", "pulses"], "irrigation": "Schedule irrigation from crop stage and field moisture; avoid prolonged saturation.", "fertilizer": "Use soil-test recommendations and return crop residues or mature compost where appropriate.", "tests_to_confirm": ["Texture by field inspection", "pH, organic carbon, and nutrients through a laboratory soil test"]},
+    "silty": {"crops": ["wheat", "maize", "vegetables"], "irrigation": "Apply water gently to limit erosion and crusting; keep soil covered when possible.", "fertilizer": "Use a soil-test-based nutrient plan and maintain organic cover to protect structure.", "tests_to_confirm": ["Texture and erosion risk assessment", "pH and available nutrients through a laboratory soil test"]},
+    "black": {"crops": ["cotton", "sorghum", "pulses"], "irrigation": "Use measured irrigation and ensure drainage; check field moisture before irrigating.", "fertilizer": "Do not infer fertility from color; test pH and nutrients before choosing amendments.", "tests_to_confirm": ["Texture and drainage assessment", "pH, salinity, and nutrients through a laboratory soil test"]},
+    "red": {"crops": ["groundnut", "millet", "pulses"], "irrigation": "Use timely irrigation based on crop stage; surface cover can reduce moisture loss.", "fertilizer": "Use laboratory results to guide nutrients and lime; never apply lime from color alone.", "tests_to_confirm": ["pH and organic carbon", "Available phosphorus and micronutrients through a laboratory soil test"]},
+    "alluvial": {"crops": ["rice", "wheat", "sugarcane"], "irrigation": "Match irrigation to crop needs and local drainage; avoid waterlogging.", "fertilizer": "Use a soil-test-based nutrient plan; alluvial soils vary widely by location.", "tests_to_confirm": ["Field texture and drainage", "pH, salinity, and nutrients through a laboratory soil test"]}
+  }
+}

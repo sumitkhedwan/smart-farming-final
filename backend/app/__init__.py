@@ -1,0 +1,1 @@
+"""AgriWise API application package."""
