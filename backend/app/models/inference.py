@@ -24,7 +24,8 @@ def _features(image: Image.Image) -> list[float]:
     stats = ImageStat.Stat(thumb)
     means = [v / 255.0 for v in stats.mean]
     spreads = [v / 255.0 for v in stats.stddev]
-    pixels = thumb.get_flattened_data()
+    get_flattened_data = getattr(thumb, "get_flattened_data", None)
+    pixels = get_flattened_data() if callable(get_flattened_data) else tuple(thumb.getdata())
     total = max(1, len(pixels))
     green = sum(1 for r, g, b in pixels if g > r * 1.12 and g > b * 1.05 and g > 48) / total
     brown = sum(1 for r, g, b in pixels if r > g * 1.16 and r > b * 1.16 and r > 45) / total
@@ -138,3 +139,4 @@ def predict(task: str, image: Image.Image) -> dict[str, Any]:
 def inference_status() -> dict[str, bool]:
     """Report whether each task can load a real trained model in this process."""
     return {task: model is None or model[2] for task in TASK_CONFIG for model in [_cached_real_model(task)]}
+
