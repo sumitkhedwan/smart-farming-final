@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/((?!api|health).*)",
+      "source": "/((?!api|health|assets).*)",
       "destination": "/index.html"
     }
   ],
