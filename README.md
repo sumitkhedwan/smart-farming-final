@@ -96,7 +96,7 @@ The API suite covers health, the image endpoints, validation failures, the farmi
 
 ## Vercel deployment
 
-Vercel detects the FastAPI entry point in `index.py`. The Python build command in `pyproject.toml` runs `npm ci && npm run build`; FastAPI serves the built UI with SPA route fallback, while API requests remain on the same origin. `vercel.json` sets browser security headers.
+Vercel detects the FastAPI entry point in `index.py`. The Python build command in `pyproject.toml` runs `npm ci`, builds the Vite UI, then copies the generated `dist` output into `public` so Vercel serves the JavaScript and CSS bundles from its CDN. `vercel.json` sends client routes to the SPA shell, leaves API and asset paths alone, and sets browser security headers. `vercel.json` sets browser security headers.
 
 In Vercel Project Settings, configure these Production environment variables:
 
