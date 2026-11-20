@@ -30,7 +30,7 @@ The browser talks directly to Supabase Auth and user-owned tables using a publis
 
 ## Local setup
 
-Use Python 3.10–3.12 and Node.js 22.12 or newer. From the project folder in PowerShell:
+Use Python 3.11–3.12 and Node.js 22.12 or newer. From the project folder in PowerShell:
 
 ```powershell
 python -m venv .venv
@@ -128,3 +128,4 @@ The container serves the UI and API on port 5000. Copy `.env.example` to `.env` 
 The supplied project had a sign-in form that only logged values, no profile or database schema, a chatbot request to a missing route, fabricated dashboard and market metrics, hardcoded personal profile details, an external Lovable script, and no Vercel backend setup. The app now removes the sample personal details and unsupported metrics, adds actual Supabase Auth/profile/farm/crop flows with RLS migrations, implements the missing reference endpoint, validates uploads, serves client routes from FastAPI, and documents honest model and provider limitations.
 
 The Supabase project and user-owned schema are provisioned. Before real-user use, configure the final app URL in Supabase Auth, connect a production SMTP provider, and verify confirmation and password-reset emails end to end. Crop screening still uses demo models and must not guide treatment decisions until a non-demo model has representative field data, independent validation, and agronomist review. Market-feed and notification-delivery integrations also need provider credentials and implementation.
+
